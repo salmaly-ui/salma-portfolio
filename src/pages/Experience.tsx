@@ -12,7 +12,7 @@ export default function Experience() {
           <p className="text-gray-500 text-sm">Stages en développement web et support technique</p>
         </div>
         <div className="relative pl-6 border-l-2 border-emerald-200 space-y-10">
-          {experiences.map((exp, idx) => (
+          {experiences.map((exp) => (
             <div key={exp.id} className="relative">
               <div className="absolute -left-[1.85rem] w-3 h-3 rounded-full bg-emerald-500 shadow-sm"></div>
               <div className="bg-white rounded-xl border border-gray-100 p-5 shadow-sm hover:shadow transition">
