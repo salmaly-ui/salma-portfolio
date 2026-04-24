@@ -15,7 +15,7 @@ export default function Projects() {
           <p className="text-gray-500 text-sm mt-1">Développements web, IA et bases de données</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((p, idx) => {
+          {projects.map((p) => {
             const mainTech = p.tags[0];
             const icon = techIcons[mainTech] || "";
             return (
