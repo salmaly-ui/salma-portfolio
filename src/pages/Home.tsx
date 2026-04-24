@@ -1,131 +1,72 @@
-import { profile } from "@/data/profile";
+import { profile } from "#/data/profile";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   return (
     <>
-      <Helmet>
-        <title>{profile.name} | Portfolio</title>
-      </Helmet>
-
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
-        .pf-root { font-family: 'DM Sans', sans-serif; }
-        .pf-name {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-size: clamp(2.8rem, 7vw, 5rem);
-          font-weight: 700;
-          line-height: 1.05;
-          letter-spacing: -0.02em;
-        }
-        .pf-label {
-          font-size: 0.68rem;
-          font-weight: 500;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-          color: hsl(var(--muted-foreground));
-        }
-        .pf-accent { display: inline-block; width: 2rem; height: 2px; background: hsl(var(--primary)); margin-right: 0.6rem; vertical-align: middle; margin-bottom: 0.12em; }
-        .pf-skill { display: inline-block; padding: 0.28rem 0.7rem; border: 1px solid hsl(var(--border)); border-radius: 2px; font-size: 0.72rem; color: hsl(var(--muted-foreground)); transition: border-color 0.2s, color 0.2s; }
-        .pf-skill:hover { border-color: hsl(var(--foreground)); color: hsl(var(--foreground)); }
-        .pf-card { display: block; padding: 1.25rem 1.5rem; border: 1px solid hsl(var(--border)); border-radius: 2px; text-decoration: none; color: inherit; position: relative; overflow: hidden; transition: background 0.2s; }
-        .pf-card .pf-arrow { position: absolute; right: 1.1rem; top: 50%; transform: translateY(-50%) translateX(6px); opacity: 0; transition: all 0.2s; font-size: 1rem; }
-        .pf-card:hover { background: hsl(var(--secondary)); }
-        .pf-card:hover .pf-arrow { opacity: 1; transform: translateY(-50%) translateX(0); }
-        .pf-lang-bar { height: 2px; background: hsl(var(--border)); border-radius: 1px; }
-        .pf-lang-fill { height: 100%; background: hsl(var(--primary)); border-radius: 1px; }
-        .pf-btn { padding: 0.6rem 1.25rem; font-size: 0.8rem; font-weight: 500; border-radius: 2px; text-decoration: none; transition: opacity 0.2s, background 0.2s; }
-        .pf-btn-primary { background: hsl(var(--foreground)); color: hsl(var(--background)); }
-        .pf-btn-primary:hover { opacity: 0.8; }
-        .pf-btn-outline { border: 1px solid hsl(var(--border)); color: hsl(var(--foreground)); }
-        .pf-btn-outline:hover { background: hsl(var(--secondary)); }
-        @keyframes pf-up { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
-        .pf-a { animation: pf-up 0.45s ease both; }
-        .pf-a1 { animation-delay: 0.05s; } .pf-a2 { animation-delay: 0.13s; }
-        .pf-a3 { animation-delay: 0.21s; } .pf-a4 { animation-delay: 0.29s; }
-        .pf-dot { display:inline-block; width:3px; height:3px; border-radius:50%; background:hsl(var(--muted-foreground)); vertical-align:middle; margin:0 0.45rem; opacity:0.35; }
-      `}</style>
-
-      <div className="pf-root py-12 space-y-20">
-
-        {/* Hero */}
-        <section className="grid md:grid-cols-[1fr_180px] gap-12 items-start">
-          <div className="space-y-6">
-            <div className="pf-a pf-a1"><span className="pf-label">Portfolio — {new Date().getFullYear()}</span></div>
-            <h1 className="pf-name pf-a pf-a2">{profile.name}</h1>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-lg pf-a pf-a3" style={{ fontWeight: 300, lineHeight: 1.75 }}>
-              {profile.about}
-            </p>
-            <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground pf-a pf-a3">
-              <span>📍 {profile.location}</span>
-              <span className="pf-dot" />
-              <a href={`mailto:${profile.email}`} className="hover:text-foreground transition-colors">{profile.email}</a>
-              <span className="pf-dot" />
-
-            </div>
-            <div className="flex flex-wrap gap-2 pf-a pf-a4">
-              <Link to="/projects" className="pf-btn pf-btn-primary">Voir mes projets</Link>
-              <Link to="/contact" className="pf-btn pf-btn-outline">Me contacter</Link>
-              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="pf-btn pf-btn-outline">GitHub</a>
-              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="pf-btn pf-btn-outline">LinkedIn</a>
+      <Helmet><title>{profile.name} · Portfolio créatif</title></Helmet>
+      <div className="space-y-16 animate-fade-in">
+        {/* Hero section */}
+        <section className="grid md:grid-cols-[1fr_200px] gap-10 items-start">
+          <div className="space-y-5">
+            <span className="text-xs font-mono uppercase tracking-wider text-emerald-600 bg-emerald-100/50 px-2 py-0.5 rounded-full">Ingénierie web & IA</span>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">{profile.name}</h1>
+            <p className="text-gray-500 leading-relaxed max-w-lg text-sm">{profile.about}</p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link to="/projects" className="px-4 py-2 bg-emerald-700 text-white rounded-full text-sm shadow-md hover:bg-emerald-800 transition">Explorer les projets →</Link>
+              <Link to="/contact" className="px-4 py-2 border border-gray-300 rounded-full text-sm hover:bg-gray-100 transition">Me contacter</Link>
             </div>
           </div>
-
-          {/* Language sidebar */}
-          <div className="hidden md:block pt-1 space-y-4">
-            <span className="pf-label">Langues</span>
-            <div className="space-y-4 mt-3">
-              {profile.languages.map(({ name, level }) => {
-                const w = level === "Langue maternelle" ? "100%" : level === "Courant" ? "85%" : "55%";
-                return (
-                  <div key={name} className="space-y-1.5">
-                    <div className="flex justify-between" style={{ fontSize: '0.72rem' }}>
-                      <span style={{ fontWeight: 500 }}>{name}</span>
-                      <span className="text-muted-foreground">{level}</span>
-                    </div>
-                    <div className="pf-lang-bar"><div className="pf-lang-fill" style={{ width: w }} /></div>
-                  </div>
-                );
-              })}
+          <div className="hidden md:block bg-gradient-to-br from-emerald-200 to-teal-200 rounded-2xl p-5 shadow-inner">
+            <div className="space-y-3 text-center">
+              <p className="text-xs font-mono text-emerald-800">📍 {profile.location}</p>
+              <p className="text-xs break-all font-mono">{profile.email}</p>
+              <div className="flex justify-center gap-3 text-xs">
+                <a href={profile.github} target="_blank" className="underline decoration-emerald-300">GitHub</a>
+                <a href={profile.linkedin} target="_blank" className="underline decoration-emerald-300">LinkedIn</a>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Skills */}
-        <section className="space-y-4">
-          <div className="flex items-center gap-0">
-            <span className="pf-accent" />
-            <span className="pf-label">Compétences techniques</span>
+        {/* Skills compact */}
+        <section>
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-8 h-px bg-emerald-400"></div>
+            <span className="text-xs font-mono uppercase tracking-wider text-emerald-700">Compétences clés</span>
           </div>
           <div className="flex flex-wrap gap-1.5">
-            {profile.skills.map((s) => <span key={s} className="pf-skill">{s}</span>)}
+            {profile.skills.map(s => <span key={s} className="px-3 py-1 text-xs bg-gray-100 rounded-full text-gray-700">{s}</span>)}
           </div>
         </section>
 
-        {/* Nav cards */}
-        <section className="space-y-4">
-          <div className="flex items-center gap-0">
-            <span className="pf-accent" />
-            <span className="pf-label">Explorer le portfolio</span>
+        {/* Quick nav blocks */}
+        <section>
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-8 h-px bg-emerald-400"></div>
+            <span className="text-xs font-mono uppercase tracking-wider text-emerald-700">Explorer</span>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { to: "/projects",       title: "Projets",       sub: "Réalisations & code" },
-              { to: "/experience",     title: "Expérience",    sub: "Stages & missions" },
-              { to: "/education",      title: "Formations",    sub: "Parcours académique" },
-              { to: "/certifications", title: "Certifications",sub: "Badges & diplômes" },
-            ].map(({ to, title, sub }) => (
-              <Link key={to} to={to} className="pf-card">
-                <p className="font-medium text-sm" style={{ fontFamily: "'Playfair Display', serif", marginBottom: '0.2rem' }}>{title}</p>
-                <p className="pf-label" style={{ textTransform: 'none', letterSpacing: '0', fontSize: '0.72rem' }}>{sub}</p>
-                <span className="pf-arrow text-muted-foreground">→</span>
+              { to: "/projects", label: "Projets", icon: "⚙️" },
+              { to: "/experience", label: "Expériences", icon: "💼" },
+              { to: "/education", label: "Formation", icon: "🎓" },
+              { to: "/certifications", label: "Certifications", icon: "📜" }
+            ].map(card => (
+              <Link key={card.to} to={card.to} className="group flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-emerald-300 hover:bg-emerald-50/30 transition">
+                <span className="text-xl">{card.icon}</span>
+                <span className="font-medium text-sm">{card.label}</span>
+                <span className="ml-auto opacity-0 group-hover:opacity-100 transition">→</span>
               </Link>
             ))}
           </div>
         </section>
-
       </div>
+      <style>{`
+        @keyframes fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fade-in 0.5s ease both; }
+      `}</style>
     </>
   );
 }

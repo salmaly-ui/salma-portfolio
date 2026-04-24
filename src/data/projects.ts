@@ -11,50 +11,60 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "gestion-etudiants",
+    title: "Système de gestion des étudiants (Web & Mobile)",
+    period: "2025 - 2026",
+    tags: ["React", "Node.js", "Express", "MySQL", "Kotlin", "REST API"],
+    summary:
+      "Plateforme complète de gestion des étudiants avec application web et mobile.",
+    description:
+      "Développement d’un système full-stack avec API REST en Node.js/Express, interface web en React et application mobile Android en Kotlin. Gestion des étudiants, absences, notes et authentification sécurisée avec MySQL.",
+    repo: "https://github.com/salmaly-ui/ProjetGestionAbs.git",
+    link: "https://github.com/salmaly-ui/ProjetGestionAbs.git"
+  },
+
+  {
     id: "gestion-incidents",
-    title: "Gestion des Incidents — Province de Safi",
+    title: "Système de gestion des incidents",
     period: "2025",
-    tags: ["PHP", "MySQL", "MVC", "Bootstrap", "JavaScript"],
-    summary: "Application web de gestion des incidents pour la Province de Safi.",
+    tags: ["PHP", "MySQL", "MVC", "DataTables"],
+    summary: "Application pour déclarer et gérer les incidents.",
     description:
-      "Analyse des besoins et modélisation du système. Développement en architecture MVC. Gestion des incidents, services, divisions et utilisateurs avec interface d'administration complète.",
-    repo: "https://github.com/ASMALAOUY/Gestion-des-Incidents.git", 
-    link: "",
+      "Architecture MVC avec gestion des utilisateurs, affichage dynamique des incidents, filtres avancés et statistiques avec Chart.js.",
+    repo: "https://github.com/ASMALAOUY/Gestion-des-Incidents"
   },
+
   {
-    id: "cabinet-medical",
-    title: "Gestion Cabinet Médical",
+    id: "medicab",
+    title: "MediCab+",
     period: "2025",
-    tags: ["PHP", "MySQL", "HTML/CSS", "JavaScript", "Bootstrap"],
-    summary:
-      "Site web de gestion d'un cabinet médical : comptes, rendez-vous et historique médical.",
+    tags: ["HTML", "CSS", "JavaScript", "PHP"],
+    summary: "Site de gestion de cabinet médical.",
     description:
-      "Création de comptes patients et médecins, prise de rendez-vous en ligne, consultation de l'historique médical, interface responsive.",
-    repo: "", 
-    link: "",
+      "Interface pour patients et médecins avec gestion des rendez-vous, authentification et suivi des consultations.",
+    
+  },
+
+  {
+    id: "portfolio",
+    title: "Portfolio personnel",
+    period: "2026",
+    tags: ["React", "TypeScript", "Tailwind", "Vite"],
+    summary: "Portfolio moderne avec animations et SEO.",
+    description:
+      "Portfolio professionnel avec React, routing avancé, dark mode, SEO optimisé et déploiement Vercel.",
+    repo: "https://github.com/salmaly-ui/ProjetGestionAbs.git",
+    link: "https://ton-portfolio.vercel.app"
   },
   {
-    id: "recommandation-cours",
-    title: "Système de Recommandation de Cours",
-    period: "2026",
-    tags: ["Python", "Machine Learning", "pandas", "scikit-learn"],
-    summary:
-      "Système de recommandation de cours personnalisés basé sur le Machine Learning.",
-    description:
-      "Analyse des besoins, modélisation et développement des algorithmes de recommandation. Interfaces interactives pour la visualisation des résultats.",
-    repo: "https://github.com/ASMALAOUY/course-recommendation.git",
-    link: "",
-  },
-  {
-    id: "gestion-evenement",
-    title: "Gestion des Événements",
-    period: "2026",
-    tags: ["java", "JDBC", "Java Swing", "JavaMail API", "JFreeChart"],
-    summary:
-      "Application web complète de gestion et planification d'événements.",
-    description:
-      "Création, modification et suppression d'événements. Gestion des participants, inscriptions en ligne et tableau de bord administrateur.",
-    repo: "https://github.com/ASMALAOUY/gestion-des-evenement.git",
-    link: "",
-  },
+  id: "course-recommendation",
+  title: "Système de recommandation de cours (Machine Learning)",
+  period: "2026",
+  tags: ["Python", "Machine Learning", "Scikit-learn", "Pandas"],
+  summary: "Moteur intelligent de recommandation de cours basé sur les préférences utilisateur.",
+  description:
+    "Projet de Machine Learning utilisant Python, Pandas et Scikit-learn pour analyser les données utilisateurs et recommander des cours pertinents selon leurs compétences et intérêts. Modèle basé sur le filtrage collaboratif et contenu.",
+  repo: "https://github.com/ASMALAOUY/course-recommendation",
+  link: "https://github.com/ASMALAOUY/course-recommendation"
+}
 ];

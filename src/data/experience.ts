@@ -9,56 +9,57 @@ export type Experience = {
   description: string[];
   technologies: string[];
   supervisor?: string;
-  certificate?: string;
 };
 
 export const experiences: Experience[] = [
   {
-    id: "ghm-labs",
-    company: "GHM Labs",
-    position: "Stagiaire Développeur Web",
-    location: "Kénitra, Maroc",
-    startDate: "2025-8",
-    
-    current: false,
-    description: [
-      "Création d'articles de blog",
-      "Développement et maintenance de sites web",
-      "Intégration de fonctionnalités front-end et back-end",
-      "Optimisation de l'expérience utilisateur et de la performance des sites"
-    ],
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-    supervisor: "Zouhair ELMANTI - Leader Technique, Développeur Principal",
-    certificate: "Stage de 1 mois effectué avec sérieux et assiduité. Attestation délivrée le 24/12/2025"
-  },
-  {
     id: "prefecture-safi",
     company: "Préfecture de Safi",
-    position: "Stagiaire - Département Informatique",
+    position: "Stagiaire Développement Web",
     location: "Safi, Maroc",
     startDate: "2025-08",
+    endDate: "2025-09",
     current: false,
     description: [
-      "Réalisation d’une application web de gestion des incidents.",
-      "Analyse des besoins et modélisation du système",
-      "Développement de l’application en utilisant l’architecture MVC.",
-      
+      "Conception et développement d’une application de gestion des incidents",
+      "Analyse des besoins fonctionnels et modélisation des données",
+      "Implémentation d’un CRUD complet avec PHP et MySQL",
+      "Amélioration de l’interface utilisateur (HTML, CSS, Bootstrap)"
     ],
-    technologies: ["php", "html", "css","MySQL"]
+    technologies: ["PHP", "MySQL", "HTML", "CSS", "Bootstrap"],
+    supervisor: "Encadrant technique"
+  },
+  {
+    id: "ghm-solutions",
+    company: "GHM Solutions",
+    position: "Développeuse Web Stagiaire",
+    location: "Kénitra, Maroc",
+    startDate: "2025-07",
+    endDate: "2025-08",
+    current: false,
+    description: [
+      "Développement de modules backend en PHP/MySQL",
+      "Optimisation du responsive design pour différents écrans",
+      "Correction de bugs et amélioration des performances",
+      "Collaboration avec l’équipe sur des projets web"
+    ],
+    technologies: ["PHP", "MySQL", "JavaScript", "CSS"],
+    supervisor: "Zouhair ELMANTI"
   },
   {
     id: "lycee-zineb",
-    company: "Lycée Zineb Ennafzaoui",
-    position: "Stagiaire",
-    location: "Maroc",
-    startDate: "2024-11",
+    company: "Lycée Zineb",
+    position: "Assistante Informatique",
+    location: "El Jadida, Maroc",
+    startDate: "2024-10",
     endDate: "2025-06",
     current: false,
     description: [
-      "Initiation des élèves à l'usage de l'outil informatique",
-      "Création de supports pédagogiques",
-      "Assistance technique"
+      "Initiation des élèves aux outils informatiques de base",
+      "Support technique (installation logiciels, dépannage)",
+      "Gestion du matériel informatique",
+      "Sensibilisation à l’utilisation responsable des technologies"
     ],
-    technologies: ["Support informatique", "Pédagogie"]
+    technologies: ["Windows", "Réseaux", "Bureautique"]
   }
 ];

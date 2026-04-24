@@ -2,42 +2,27 @@ import { Outlet, NavLink } from "react-router-dom";
 
 export default function RootLayout() {
   return (
-    <div className="min-h-dvh bg-background text-foreground">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="mx-auto max-w-6xl flex items-center justify-between p-4">
-          <NavLink to="/" className="font-bold text-xl">
-            Asma Laouy
+    <div className="min-h-dvh bg-gradient-to-br from-emerald-50 via-white to-teal-50 text-gray-800 font-sans">
+      <header className="sticky top-0 z-50 w-full border-b border-emerald-200/40 bg-white/80 backdrop-blur-md">
+        <div className="mx-auto max-w-5xl flex items-center justify-between px-6 py-3">
+          <NavLink to="/" className="text-xl font-semibold tracking-tight bg-gradient-to-r from-emerald-700 to-teal-600 bg-clip-text text-transparent">
+            Salma Laouy
           </NavLink>
-          <nav className="hidden md:flex items-center gap-6">
-            <NavLink to="/projects" className="text-sm hover:text-primary transition-colors">
-              Projets
-            </NavLink>
-            <NavLink to="/experience" className="text-sm hover:text-primary transition-colors">
-              Expérience
-            </NavLink>
-            <NavLink to="/education" className="text-sm hover:text-primary transition-colors">
-              Formations
-            </NavLink>
-            <NavLink to="/certifications" className="text-sm hover:text-primary transition-colors">
-              Certifications
-            </NavLink>
-            <NavLink to="/contact" className="text-sm hover:text-primary transition-colors">
-              Contact
-            </NavLink>
+          <nav className="hidden md:flex gap-7 text-sm font-medium">
+            <NavLink to="/projects" className="hover:text-emerald-600 transition">Projets</NavLink>
+            <NavLink to="/experience" className="hover:text-emerald-600 transition">Expériences</NavLink>
+            <NavLink to="/education" className="hover:text-emerald-600 transition">Formation</NavLink>
+            <NavLink to="/certifications" className="hover:text-emerald-600 transition">Certifications</NavLink>
+            <NavLink to="/contact" className="hover:text-emerald-600 transition">Contact</NavLink>
           </nav>
         </div>
       </header>
-      
-      <main className="mx-auto max-w-6xl p-6">
+      <main className="mx-auto max-w-5xl px-6 py-10">
         <Outlet />
       </main>
-      
-    
-      <footer className="border-t py-6 text-center text-sm text-muted-foreground">
-  © {new Date().getFullYear()} • Asma Laouy • Tous droits réservés
- 
-
-</footer>
+      <footer className="border-t border-emerald-100 py-6 text-center text-xs text-gray-400">
+        © {new Date().getFullYear()} — Salma Laouy—  Portfolio construit avec React & Tailwind
+      </footer>
     </div>
   );
 }

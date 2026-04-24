@@ -6,62 +6,75 @@ export type Education = {
   location: string;
   startDate: string;
   endDate: string;
-  gpa?: string;
   courses: string[];
   highlights?: string[];
 };
 
 export const education: Education[] = [
   {
-    id: "licence-info",
-    school: "ENS (École Normale Supérieure)",
-    degree: "Licence",
+    id: "ens-licence",
+    school: "École Normale Supérieure de Marrakech",
+    degree: "Licence en Éducation",
     field: "Informatique",
-    location: "Maroc",
+    location: "Marrakech, Maroc",
     startDate: "2023",
     endDate: "Présent",
     courses: [
-      "Programmation",
+      "Programmation Web (HTML, CSS, JavaScript, Bootstrap)",
+      "PHP & MySQL",
+      "Architecture MVC",
+      "Algorithmique avancée",
       "Bases de données",
-      "Génie logiciel",
-      "Réseaux",
-      "Développement web",
+      "Réseaux informatiques",
+      "Développement Mobile Android (Kotlin)"
     ],
     highlights: [
-      "Projets concrets en gestion des incidents, applications médicales et systèmes de recommandation",
-    ],
+      "Développement d’un système de gestion des incidents (PHP, MVC, MySQL)",
+      "Conception d’une application de gestion des étudiants (Web + API)",
+      "Création d’une application mobile Android en Kotlin connectée à une API REST",
+      "Développement du projet MediCab+ (gestion cabinet médical)",
+      "Intégration de tableaux dynamiques (DataTables)",
+      "Visualisation de données avec Chart.js",
+      "Création d’interfaces modernes avec React + TypeScript"
+    ]
   },
+
   {
-    id: "deug-ens",
-    school: "ENS (École Normale Supérieure)",
-    degree: "DEUG",
-    field: "Informatique",
-    location: "Maroc",
-    startDate: "2023",
-    endDate: "2025",
-    courses: [
-      "Programmation",
-      "Structures de données",
-      "Bases de données",
-      "Systèmes d'exploitation",
-      "Réseaux",
-      "Mathématiques appliquées",
-    ],
-    highlights: [
-      "Réalisation de projets académiques en développement web et gestion de bases de données",
-      "Acquisition de solides bases en algorithmique et programmation",
-      "Travaux pratiques en systèmes informatiques et réseaux",
-    ],
-  },
-  {
-    id: "bac-mipc",
-    school: "Faculté des Sciences et Techniques de Marrakech (FSTG)",
-    degree: "Bac+1",
-    field: "MIPC (Mathématiques, Informatique, Physique, Chimie)",
+    id: "fstg-mipc",
+    school: "Faculté des Sciences et Techniques de Marrakech",
+    degree: "1ère année MIPC",
+    field: "Mathématiques, Informatique, Physique",
     location: "Marrakech, Maroc",
     startDate: "2022",
     endDate: "2023",
-    courses: ["Mathématiques", "Informatique", "Physique", "Chimie"],
-    highlights: [],
+    courses: [
+      "Mathématiques générales",
+      "Physique",
+      "Algorithmique",
+      "Programmation C"
+    ],
+    highlights: [
+      "Acquisition des bases solides en logique et programmation",
+      "Premiers projets en algorithmique et structures de données"
+    ]
   },
+
+  {
+    id: "bac",
+    school: "Lycée Almoaatid Ibn Abbad",
+    degree: "Baccalauréat Scientifique",
+    field: "Sciences",
+    location: "Maroc",
+    startDate: "2021",
+    endDate: "2022",
+    courses: [
+      "Mathématiques",
+      "Sciences physiques",
+      "Informatique"
+    ],
+    highlights: [
+      "Obtention du baccalauréat scientifique",
+      "Orientation vers les études en informatique"
+    ]
+  }
 ];

@@ -2,113 +2,109 @@ export type Certification = {
   id: string;
   title: string;
   issuer: string;
-  issueDate: string;
-  expiryDate?: string;
-  credentialId?: string;
+  issueDate?: string;
   credentialUrl?: string;
   skills: string[];
   tags: string[];
-  status: "active" | "expired" | "revoked";
+  status: string;
 };
 
 export const certifications: Certification[] = [
-  // ── MLIA Edu ──────────────────────────────────────────────────────────────
   {
-    id: "php7-mlia",
+    id: "mlia-php-mvc",
     title: "Ingénierie Logicielle Web avec PHP 7 : Architecture Multicouche et Accès aux Données Sécurisé",
-    issuer: "MLIA Edu",
-    issueDate: "Mars 2026",
-    credentialId: "44-aea4e157-1d11-4a49-8a4a-5bc875816e8c-813347",
-    credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/44-aea4e157-1d11-4a49-8a4a-5bc875816e8c-677299",
-    skills: ["PHP 7", "Architecture Multicouche", "MVC", "MySQL", "Sécurité Web"],
-    tags: ["Web", "Backend", "PHP"],
-    status: "active",
+    issuer: "MLIAEdu",
+    credentialUrl:
+      "https://mliaedu.toubkalit.com/verify-certificate/15-ef626c4b-153c-4edc-a133-1b5d717ebe61-209493",
+    skills: ["PHP", "MVC", "Architecture logicielle", "MySQL", "Sécurité Web"],
+    tags: ["Backend", "Web"],
+    status: "completed"
   },
+
   {
-    id: "kotlin-mlia",
-    title: "Fondamentaux de la programmation en Kotlin",
-    issuer: "MLIA Edu",
-    issueDate: "2026",
-    credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/40-aea4e157-1d11-4a49-8a4a-5bc875816e8c-390513",
-    skills: ["Kotlin", "POO", "Programmation fonctionnelle"],
-    tags: ["Programming", "Kotlin"],
-    status: "active",
-  },
-  {
-    id: "java-mlia",
-    title: "Java Programming",
-    issuer: "MLIA Edu",
-    issueDate: "2025",
-    credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/6-aea4e157-1d11-4a49-8a4a-5bc875816e8c-464548",
-    skills: ["Java", "POO", "Collections", "Héritage"],
+    id: "mlia-java",
+    title: "Java Certificate",
+    issuer: "MLIAEdu",
+    credentialUrl:
+      "https://mliaedu.toubkalit.com/verify-certificate/40-ef626c4b-153c-4edc-a133-1b5d717ebe61-518744",
+    skills: ["Java", "POO", "Collections"],
     tags: ["Java", "Programming"],
-    status: "active",
-  },
-  {
-    id: "cpp-mlia",
-    title: " C++ Programming",
-    issuer: "MLIA Edu",
-    issueDate: "8 novembre 2025",
-    credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/12-aea4e157-1d11-4a49-8a4a-5bc875816e8c-538223",
-    skills: ["C", "C++", "Pointeurs", "POO"],
-    tags: ["C++", "Programming"],
-    status: "active",
-  },
-  {
-    id: "python-mlia",
-    title: "Python & Python POO",
-    issuer: "MLIA Edu",
-    issueDate: "23 novembre 2025",
-    credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/11-aea4e157-1d11-4a49-8a4a-5bc875816e8c-621777",
-    skills: ["Python", "POO", "Classes", "Héritage"],
-    tags: ["Python", "Programming"],
-    status: "active",
-  },
-  {
-    id: "mysql-mlia",
-    title: "MySQL Database",
-    issuer: "MLIA Edu",
-    issueDate: "2024",
-    credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/15-aea4e157-1d11-4a49-8a4a-5bc875816e8c-209811",
-    skills: ["MySQL", "SQL", "Modélisation", "Jointures", "Database Design"],
-    tags: ["Database", "SQL"],
-    status: "active",
+    status: "completed"
   },
 
-  // ── Cisco (Credly) ────────────────────────────────────────────────────────
   {
-    id: "python-essentials",
-    title: "Python Essentials 1",
-    issuer: "Cisco",
-    issueDate: "Mai 2025",
-    credentialUrl: "https://www.credly.com/badges/93d9d144-015b-4ef6-b0e3-37aa00bea4b8/linked_in_profile",
-    skills: ["Python", "Langage de programmation", "Scripting"],
-    tags: ["Python", "Programming"],
-    status: "active",
+    id: "sololearn-sql-intro",
+    title: "Introduction to SQL",
+    issuer: "SoloLearn",
+    credentialUrl: "https://www.sololearn.com/certificates/CC-ALCOS8HE",
+    skills: ["SQL", "Bases de données"],
+    tags: ["Database"],
+    status: "completed"
   },
+
   {
-    id: "networking-basics",
+    id: "sololearn-sql-intermediate",
+    title: "Intermediate SQL",
+    issuer: "SoloLearn",
+    credentialUrl: "https://www.sololearn.com/certificates/CC-8DKZ4SRO",
+    skills: ["SQL", "Requêtes avancées", "Jointures"],
+    tags: ["Database"],
+    status: "completed"
+  },
+
+  {
+    id: "datacamp-ml",
+    title: "Understanding Machine Learning",
+    issuer: "DataCamp",
+    credentialUrl:
+      "https://www.datacamp.com/completed/statement-of-accomplishment/course/2a079bf7389391efbe60a5838ba4bb8697e8ba18",
+    skills: ["Machine Learning", "Data Science", "Python"],
+    tags: ["AI", "ML"],
+    status: "completed"
+  },
+
+  {
+    id: "mlia-cpp",
+    title: "C++ Certificate",
+    issuer: "MLIAEdu",
+    credentialUrl: "https://mliaedu.toubkalit.com/verify-certificate/12-ef626c4b-153c-4edc-a133-1b5d717ebe61-722107",
+    skills: ["C++", "POO", "Algorithmique"],
+    tags: ["Programming"],
+    status: "completed"
+  },
+
+  {
+    id: "cisco-networking",
     title: "Networking Basics",
-    issuer: "Cisco",
-    issueDate: "Mai 2025",
-    credentialUrl: "https://www.credly.com/badges/471d5a15-eff4-4236-8cd9-47a3f282afed/linked_in_profile",
-    skills: ["Réseaux", "TCP/IP", "DNS", "Protocoles réseau"],
-    tags: ["Networking", "Infrastructure"],
-    status: "active",
+    issuer: "Cisco Networking Academy",
+    issueDate: "2025-05-06",
+    credentialUrl:
+      "https://www.credly.com/badges/596cefc2-f007-4776-a496-eb7fe8b79956/linked_in?t=t5ekft",
+    skills: ["Réseaux", "TCP/IP", "OSI Model"],
+    tags: ["Networking"],
+    status: "completed"
   },
 
-  // ── Programiz ─────────────────────────────────────────────────────────────
   {
-    id: "learn-html",
-    title: "Learn HTML",
-    issuer: "Programiz",
-    issueDate: "Fév. 2025",
-    credentialId: "8511D8184F1E",
-    credentialUrl: "https://programiz.pro/certificates/detail/8511D8184F1E",
-    skills: ["HTML", "Structure Web", "Balises sémantiques"],
-    tags: ["Web", "Frontend"],
-    status: "active",
+    id: "cisco-python-essentials",
+    title: "Python Essentials 1",
+    issuer: "Cisco Networking Academy",
+    issueDate: "2025-05-11",
+    credentialUrl:
+      "https://www.netacad.com/certificates/python-essentials-1",
+    skills: ["Python", "Programmation de base"],
+    tags: ["Python"],
+    status: "completed"
   },
 
-
+  {
+    id: "datacamp-python-oop",
+    title: "Introduction à la POO en Python",
+    issuer: "DataCamp",
+    credentialUrl:
+      "https://www.datacamp.com/completed/statement-of-accomplishment/course/2a079bf7389391efbe60a5838ba4bb8697e8ba18",
+    skills: ["Python", "OOP"],
+    tags: ["Python", "Programming"],
+    status: "completed"
+  }
 ];
