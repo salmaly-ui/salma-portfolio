@@ -2,7 +2,7 @@ export const profile = {
   name: "Salma Laouy",
   role: "Développeuse Web Full Stack (Junior)",
   location: "Marrakech, Maroc",
-  email: "salma.laouy133@gmail.com",
+  email: "salmalaouy133@gmail.com",
 
   github: "https://github.com/salmaly-ui",
   linkedin: "https://www.linkedin.com/in/salma-laouy-921991397 ",
