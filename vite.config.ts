@@ -15,6 +15,9 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    headers: {
+      'Content-Security-Policy': "child-src https: mailto:; frame-src https: mailto:"
+    }
   },
   build: {
     outDir: 'dist',
