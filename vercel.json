@@ -7,10 +7,6 @@
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "child-src https: mailto:; frame-src https: mailto:"
         }
       ]
     }
