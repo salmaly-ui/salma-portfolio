@@ -24,8 +24,18 @@ export default function Contact() {
         </div>
 
         <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition rounded-2xl p-6 space-y-5">
-          <a href={`mailto:${profile.email}`} className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-            <span className="text-2xl"></span>
+        <button
+          onClick={() => window.location.href = `mailto:${profile.email}`}
+          className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition" >
+          <span className="text-2xl"></span>
+          <div>
+            <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
+            <p className="text-gray-900 dark:text-white font-medium">
+              {profile.email}
+            </p>
+          </div>
+        </button>
+          <span className="text-2xl"></span>
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
               <p className="text-gray-900 dark:text-white font-medium">{profile.email}</p>
