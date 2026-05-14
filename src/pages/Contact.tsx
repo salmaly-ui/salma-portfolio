@@ -2,6 +2,11 @@ import { Helmet } from "react-helmet-async";
 import { profile } from "#/data/profile";
 
 export default function Contact() {
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.open(`mailto:${profile.email}`, '_blank');
+  };
+
   return (
     <>
       <Helmet>
@@ -24,10 +29,10 @@ export default function Contact() {
         </div>
 
         <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition rounded-2xl p-6 space-y-5">
-          {/* Email - lien direct sans JavaScript */}
-          <a
-            href={`mailto:${profile.email}`}
-            className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition w-full"
+          {/* Email - avec onClick et window.open */}
+          <div
+            onClick={handleEmailClick}
+            className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition w-full cursor-pointer"
           >
             <div className="w-6 text-gray-500 dark:text-gray-400 text-sm font-mono">[e]</div>
             <div>
@@ -36,7 +41,7 @@ export default function Contact() {
                 {profile.email}
               </p>
             </div>
-          </a>
+          </div>
 
           {/* Localisation */}
           <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition">
