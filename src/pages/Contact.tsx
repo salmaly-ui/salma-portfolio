@@ -24,45 +24,48 @@ export default function Contact() {
         </div>
 
         <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition rounded-2xl p-6 space-y-5">
-        <button
-          onClick={() => window.location.href = `mailto:${profile.email}`}
-          className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition" >
-          <span className="text-2xl"></span>
-          <div>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-            <p className="text-gray-900 dark:text-white font-medium">
-              {profile.email}
-            </p>
-          </div>
-        </button>
-          <span className="text-2xl"></span>
+          {/* Email */}
+          <button
+            onClick={() => window.location.href = `mailto:${profile.email}`}
+            className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition w-full text-left"
+          >
+            <div className="w-6 text-gray-500 dark:text-gray-400 text-sm font-mono">[e]</div>
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-              <p className="text-gray-900 dark:text-white font-medium">{profile.email}</p>
+              <p className="text-gray-900 dark:text-white font-medium">
+                {profile.email}
+              </p>
             </div>
-          </a>
+          </button>
+
+          {/* Localisation */}
           <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-            <span className="text-2xl"></span>
+            <div className="w-6 text-gray-500 dark:text-gray-400 text-sm font-mono">[l]</div>
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400">Localisation</p>
               <p className="text-gray-900 dark:text-white font-medium">{profile.location}</p>
             </div>
           </div>
+
+          {/* GitHub */}
           <a href={profile.github} target="_blank" rel="noreferrer" className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-            <span className="text-2xl"></span>
+            <div className="w-6 text-gray-500 dark:text-gray-400 text-sm font-mono">[g]</div>
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400">GitHub</p>
               <p className="text-gray-900 dark:text-white font-medium">Voir mes projets</p>
             </div>
           </a>
+
+          {/* LinkedIn */}
           <a href={profile.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-            <span className="text-2xl"></span>
+            <div className="w-6 text-gray-500 dark:text-gray-400 text-sm font-mono">[in]</div>
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400">LinkedIn</p>
               <p className="text-gray-900 dark:text-white font-medium">Profil professionnel</p>
             </div>
           </a>
         </div>
+
         <p className="text-center text-xs text-gray-400 dark:text-gray-500">Réponse rapide sous 24–48h</p>
       </div>
     </>
