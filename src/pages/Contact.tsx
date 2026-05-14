@@ -24,10 +24,10 @@ export default function Contact() {
         </div>
 
         <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition rounded-2xl p-6 space-y-5">
-          {/* Email */}
-          <button
-            onClick={() => window.location.href = `mailto:${profile.email}`}
-            className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition w-full text-left"
+          {/* Email - version corrigée sans button > a */}
+          <a
+            href={`mailto:${profile.email}`}
+            className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition w-full"
           >
             <div className="w-6 text-gray-500 dark:text-gray-400 text-sm font-mono">[e]</div>
             <div>
@@ -36,7 +36,7 @@ export default function Contact() {
                 {profile.email}
               </p>
             </div>
-          </button>
+          </a>
 
           {/* Localisation */}
           <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition">
@@ -48,7 +48,12 @@ export default function Contact() {
           </div>
 
           {/* GitHub */}
-          <a href={profile.github} target="_blank" rel="noreferrer" className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition">
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+          >
             <div className="w-6 text-gray-500 dark:text-gray-400 text-sm font-mono">[g]</div>
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400">GitHub</p>
@@ -57,7 +62,12 @@ export default function Contact() {
           </a>
 
           {/* LinkedIn */}
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition">
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+          >
             <div className="w-6 text-gray-500 dark:text-gray-400 text-sm font-mono">[in]</div>
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400">LinkedIn</p>
