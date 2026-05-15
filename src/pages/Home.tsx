@@ -1,70 +1,43 @@
-import { useState } from "react";
 import { profile } from "#/data/profile";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <>
       <Helmet><title>{profile.name} · Portfolio créatif</title></Helmet>
       
-      {/* Menu Responsive */}
+      {/* Menu Responsive Simple */}
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-emerald-200/40 dark:border-slate-800 mb-8">
         <div className="max-w-5xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+          {/* Logo */}
+          <div className="text-center md:text-left mb-3 md:mb-0">
             <Link to="/" className="text-xl font-bold text-gray-900 dark:text-white">
               {profile.name}
             </Link>
-            
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-6">
-              <Link to="/" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
-                Accueil
-              </Link>
-              <Link to="/contact" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
-                Contact
-              </Link>
-            </nav>
-            
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition"
-              aria-label="Menu"
-            >
-              <div className="w-6 h-5 flex flex-col justify-between">
-                <span className={`w-full h-0.5 bg-gray-900 dark:bg-white transition-transform duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-                <span className={`w-full h-0.5 bg-gray-900 dark:bg-white transition-opacity duration-300 ${isMenuOpen ? "opacity-0" : ""}`} />
-                <span className={`w-full h-0.5 bg-gray-900 dark:bg-white transition-transform duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-              </div>
-            </button>
           </div>
           
-          {/* Mobile Navigation */}
-          <div
-            className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-              isMenuOpen ? "max-h-32 opacity-100 mt-4" : "max-h-0 opacity-0"
-            }`}
-          >
-            <nav className="flex flex-col gap-2 pb-2">
-              <Link
-                to="/"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-sm font-medium px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition"
-              >
-                Accueil
-              </Link>
-              <Link
-                to="/contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-sm font-medium px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition"
-              >
-                Contact
-              </Link>
-            </nav>
-          </div>
+          {/* Navigation - devient colonne sur mobile, ligne sur desktop */}
+          <nav className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 md:gap-6">
+            <Link to="/" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
+              Accueil
+            </Link>
+            <Link to="/contact" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
+              Contact
+            </Link>
+            <Link to="/projects" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
+              Projets
+            </Link>
+            <Link to="/experience" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
+              Expériences
+            </Link>
+            <Link to="/education" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
+              Formation
+            </Link>
+            <Link to="/certifications" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
+              Certifications
+            </Link>
+          </nav>
         </div>
       </header>
 
@@ -98,7 +71,7 @@ export default function Home() {
             <span className="text-xs font-mono uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Compétences clés</span>
           </div>
           <div className="flex flex-wrap gap-1.5">
-            {profile.skills.map(s => <span key={s} className="px-3 py-1 text-xs bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full">{s}</span>)}
+            {profile.skills?.map((s: string) => <span key={s} className="px-3 py-1 text-xs bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 rounded-full">{s}</span>)}
           </div>
         </section>
 
