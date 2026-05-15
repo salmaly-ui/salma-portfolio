@@ -1,11 +1,74 @@
+import { useState } from "react";
 import { profile } from "#/data/profile";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
       <Helmet><title>{profile.name} · Portfolio créatif</title></Helmet>
+      
+      {/* Menu Responsive */}
+      <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-emerald-200/40 dark:border-slate-800 mb-8">
+        <div className="max-w-5xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="text-xl font-bold text-gray-900 dark:text-white">
+              {profile.name}
+            </Link>
+            
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-6">
+              <Link to="/" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+                Accueil
+              </Link>
+              <Link to="/contact" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+                Contact
+              </Link>
+            </nav>
+            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+              aria-label="Menu"
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className={`w-full h-0.5 bg-gray-900 dark:bg-white transition-transform duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+                <span className={`w-full h-0.5 bg-gray-900 dark:bg-white transition-opacity duration-300 ${isMenuOpen ? "opacity-0" : ""}`} />
+                <span className={`w-full h-0.5 bg-gray-900 dark:bg-white transition-transform duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+              </div>
+            </button>
+          </div>
+          
+          {/* Mobile Navigation */}
+          <div
+            className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+              isMenuOpen ? "max-h-32 opacity-100 mt-4" : "max-h-0 opacity-0"
+            }`}
+          >
+            <nav className="flex flex-col gap-2 pb-2">
+              <Link
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm font-medium px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+              >
+                Accueil
+              </Link>
+              <Link
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm font-medium px-3 py-2 rounded-lg text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+              >
+                Contact
+              </Link>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Contenu original */}
       <div className="space-y-16 animate-fade-in">
         <section className="grid md:grid-cols-[1fr_200px] gap-10 items-start">
           <div className="space-y-5">
@@ -22,8 +85,8 @@ export default function Home() {
               <p className="text-xs font-mono text-emerald-800 dark:text-emerald-200">📍 {profile.location}</p>
               <p className="text-xs break-all font-mono text-gray-700 dark:text-gray-300">{profile.email}</p>
               <div className="flex justify-center gap-3 text-xs">
-                <a href={profile.github} target="_blank" className="underline decoration-emerald-300 dark:decoration-emerald-500 text-emerald-800 dark:text-emerald-200">GitHub</a>
-                <a href={profile.linkedin} target="_blank" className="underline decoration-emerald-300 dark:decoration-emerald-500 text-emerald-800 dark:text-emerald-200">LinkedIn</a>
+                <a href={profile.github} target="_blank" rel="noreferrer" className="underline decoration-emerald-300 dark:decoration-emerald-500 text-emerald-800 dark:text-emerald-200">GitHub</a>
+                <a href={profile.linkedin} target="_blank" rel="noreferrer" className="underline decoration-emerald-300 dark:decoration-emerald-500 text-emerald-800 dark:text-emerald-200">LinkedIn</a>
               </div>
             </div>
           </div>
@@ -46,13 +109,12 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { to: "/projects", label: "Projets", icon: "⚙️" },
-              { to: "/experience", label: "Expériences", icon: "💼" },
-              { to: "/education", label: "Formation", icon: "🎓" },
-              { to: "/certifications", label: "Certifications", icon: "📜" }
+              { to: "/projects", label: "Projets" },
+              { to: "/experience", label: "Expériences" },
+              { to: "/education", label: "Formation" },
+              { to: "/certifications", label: "Certifications" }
             ].map(card => (
               <Link key={card.to} to={card.to} className="group flex items-center gap-2 p-3 rounded-xl border border-gray-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-600 hover:bg-emerald-50/30 dark:hover:bg-emerald-950/30 transition">
-                <span className="text-xl">{card.icon}</span>
                 <span className="font-medium text-sm text-gray-700 dark:text-gray-300">{card.label}</span>
                 <span className="ml-auto opacity-0 group-hover:opacity-100 transition text-gray-500 dark:text-gray-400">→</span>
               </Link>
