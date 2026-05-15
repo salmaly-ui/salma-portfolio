@@ -6,42 +6,6 @@ export default function Home() {
   return (
     <>
       <Helmet><title>{profile.name} · Portfolio créatif</title></Helmet>
-      
-      {/* Menu Responsive Simple */}
-      <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-emerald-200/40 dark:border-slate-800 mb-8">
-        <div className="max-w-5xl mx-auto px-6 py-4">
-          {/* Logo */}
-          <div className="text-center md:text-left mb-3 md:mb-0">
-            <Link to="/" className="text-xl font-bold text-gray-900 dark:text-white">
-              {profile.name}
-            </Link>
-          </div>
-          
-          {/* Navigation - devient colonne sur mobile, ligne sur desktop */}
-          <nav className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 md:gap-6">
-            <Link to="/" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
-              Accueil
-            </Link>
-            <Link to="/contact" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
-              Contact
-            </Link>
-            <Link to="/projects" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
-              Projets
-            </Link>
-            <Link to="/experience" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
-              Expériences
-            </Link>
-            <Link to="/education" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
-              Formation
-            </Link>
-            <Link to="/certifications" className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition py-1">
-              Certifications
-            </Link>
-          </nav>
-        </div>
-      </header>
-
-      {/* Contenu original */}
       <div className="space-y-16 animate-fade-in">
         <section className="grid md:grid-cols-[1fr_200px] gap-10 items-start">
           <div className="space-y-5">
